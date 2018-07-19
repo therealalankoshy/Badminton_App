@@ -51,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
                 String Match1res = m1s.getText().toString();
                 String Match2res = m2s.getText().toString();
                 String Match3res = m3s.getText().toString();
+                Match1res = Match1res.replaceAll("\\s+","");
+                Match2res = Match2res.replaceAll("\\s+","");
+                Match3res = Match3res.replaceAll("\\s+","");
+
 
                 String[] Match1sets = Match1res.split(",");
                 String[] Match2sets = Match2res.split(",");
@@ -462,6 +466,8 @@ public class MainActivity extends AppCompatActivity {
                 if (t3f==1)
                     res.setText("Eliminated is "+M2T2);
                     //System.out.println("Eliminated is C");
+                if (t1f==-10 && t2f==-10 && t3f==-10)
+                    res.setText("All Parameters are Same");
 
 
 
@@ -475,47 +481,3 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
-
-
-/*
-package com.example.yyyy.add;
-
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-
-public class MainActivity extends AppCompatActivity {
-
-    private EditText num1;
-    private EditText num2;
-    private Button add;
-    private TextView result;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        num1 = (EditText)findViewById(R.id.etnum1);
-        num2 = (EditText)findViewById(R.id.etnum2);
-        add = (Button) findViewById(R.id.btn1);
-        result = (TextView) findViewById(R.id.textsum);
-
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int n1 = Integer.parseInt(num1.getText().toString());
-                int n2 = Integer.parseInt(num2.getText().toString());
-                int sum = n1+n2;
-                result.setText("Answer is" + String.valueOf(sum));
-            }
-        });
-
-    }
-}
-
- */
